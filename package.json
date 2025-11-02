@@ -1,0 +1,75 @@
+{
+  "name": "@chasenocap/event-system",
+  "version": "1.0.5",
+  "description": "Event-driven debugging and testing system for H1B monorepo",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "CLAUDE.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "coverage": "vitest run --coverage",
+    "lint": "echo 'Linting skipped - no eslint config'",
+    "lint:fix": "echo 'Linting skipped - no eslint config'",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist coverage",
+    "prepublishOnly": "npm run clean && npm run build && npm test"
+  },
+  "keywords": [
+    "events",
+    "event-bus",
+    "debugging",
+    "testing",
+    "decorators"
+  ],
+  "author": "ChaseNoCap",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChaseNoCap/event-system.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
+  "dependencies": {
+    "@chasenocap/di-framework": "^1.0.0",
+    "inversify": "^6.0.2",
+    "reflect-metadata": "^0.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@typescript-eslint/eslint-plugin": "^8.18.2",
+    "@typescript-eslint/parser": "^8.18.2",
+    "@vitest/coverage-v8": "^2.1.8",
+    "eslint": "^9.18.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.3",
+    "vitest": "^2.1.8"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "tier": "shared",
+  "unifiedDependencies": {
+    "tier": "shared",
+    "strategy": "batch-5min",
+    "localDevelopment": true
+  }
+}
