@@ -3,17 +3,37 @@ node_modules/
 
 # Build outputs
 dist/
+build/
 *.tsbuildinfo
 
-# Test coverage
+# Coverage
 coverage/
+.nyc_output/
 
 # Logs
 *.log
+npm-debug.log*
+
+# Environment files
+.env
+.env.local
+.env.*.local
 
 # IDE
 .vscode/
 .idea/
-
-# OS
+*.swp
+*.swo
 .DS_Store
+
+# Test artifacts
+test-results/
+*.tgz
+
+# Package locks
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# NPM config
+.npmrc
