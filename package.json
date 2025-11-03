@@ -23,8 +23,8 @@
     "test": "vitest run",
     "test:watch": "vitest watch",
     "coverage": "vitest run --coverage",
-    "lint": "echo 'Linting skipped - no eslint config'",
-    "lint:fix": "echo 'Linting skipped - no eslint config'",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf dist coverage",
     "prepublishOnly": "npm run clean && npm run build && npm test"
